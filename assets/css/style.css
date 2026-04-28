@@ -1,16 +1,25 @@
-* {
-    box-sizing: border-box;
-}
-
+/* Base variables targeting the brutalist aesthetic */
 :root {
+    --bg-light: #ffffff;
+    --bg-dark: #000000;
+    --accent-green: #a3e635;
+    --lighter-green: #f0ffd8;
+    --border-thick: 4px solid #000000;
+    --border-thin: 2px solid #000000;
+
     --msallon-text-color: black;
     --msallon-background: whitesmoke;
+    --msallon-pink: #f7eaea;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 body {
     margin: 0;
-    padding: 0;
-    height: 100vh;
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgNi4xNTAwMDAwOTUzNjc0MzIgMjQ2LjI0MDAwNTQ5MzE2NDA2IDUzLjA0OTk5OTIzNzA2MDU1IiBkYXRhLWFzYz0iMS4xNzYyNjk1MzEyNSIgd2lkdGg9IjI0Ni4yNDAwMDU0OTMxNjQwNiIgaGVpZ2h0PSI1My4wNDk5OTkyMzcwNjA1NSI+PGRlZnMvPjxnIGZpbGw9IiNmN2VhZWEiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsIDApIj48cGF0aCBkPSJNMCA1OC44MUwwIDE1Ljg0TDEzLjA5IDE1Ljg0TDE2LjcwIDQyLjA0TDIwLjI5IDE1Ljg0TDMzLjUwIDE1Ljg0TDMzLjUwIDU4LjgxTDI1LjYzIDU4LjgxTDI1LjYzIDI3Ljg2TDIwLjcwIDU4LjgxTDEyLjk5IDU4LjgxTDcuNzYgMjcuODZMNy43NiA1OC44MUwwIDU4LjgxWk0zNi4xMyA1OC44MUw0MC4yOCAxNS44NEw1NC44NiAxNS44NEw1OC45NCA1OC44MUw1MC44MSA1OC44MUw1MC4yMCA1MS44OEw0NS4wMiA1MS44OEw0NC40OCA1OC44MUwzNi4xMyA1OC44MU00NS42MyA0NS4wMkw0OS41NCA0NS4wMkw0Ny42NiAyMy4xN0w0Ny4yNyAyMy4xN0w0NS42MyA0NS4wMlpNNjEuNTcgNTguODFMNjEuNTcgMTUuODRMNzguNzYgMTUuODRMNzguNzYgMjQuMTVMNzAuMzEgMjQuMTVMNzAuMzEgMzIuNTJMNzguNDIgMzIuNTJMNzguNDIgNDAuNjBMNzAuMzEgNDAuNjBMNzAuMzEgNTAuNDRMNzkuMzIgNTAuNDRMNzkuMzIgNTguODFMNjEuNTcgNTguODFNNzEuODggMTMuNDNMNzEuODggNi4xNUw4MC42MiA2LjE1TDgwLjYyIDEzLjQzTDcxLjg4IDEzLjQzTTYwLjA2IDEzLjQzTDYwLjA2IDYuMTVMNjguODAgNi4xNUw2OC44MCAxMy40M0w2MC4wNiAxMy40M1pNODIuMTUgNTguODFMODIuMTUgMTUuODRMOTAuNzUgMTUuODRMOTAuNzUgNTEuNDlMOTkuNTggNTEuNDlMOTkuNTggNTguODFMODIuMTUgNTguODFaTTEyMy45NSA1OS4yMFExMTguMDcgNTkuMjAgMTE1LjQ3IDU2LjI3UTExMi44NyA1My4zNCAxMTIuODcgNDYuOTVMMTEyLjg3IDQyLjc1TDEyMS4zNiA0Mi43NUwxMjEuMzYgNDguMTJRMTIxLjM2IDQ5LjYxIDEyMS44MSA1MC40NVExMjIuMjcgNTEuMjkgMTIzLjM5IDUxLjI5UTEyNC41NiA1MS4yOSAxMjUuMDEgNTAuNjFRMTI1LjQ2IDQ5LjkzIDEyNS40NiA0OC4zNlExMjUuNDYgNDYuMzkgMTI1LjA3IDQ1LjA2UTEyNC42OCA0My43MyAxMjMuNzIgNDIuNTJRMTIyLjc1IDQxLjMxIDEyMS4wNCAzOS43MEwxMTcuMTkgMzYuMDRRMTEyLjg3IDMxLjk2IDExMi44NyAyNi43MVExMTIuODcgMjEuMjIgMTE1LjQyIDE4LjMzUTExNy45NyAxNS40NSAxMjIuODAgMTUuNDVRMTI4LjcxIDE1LjQ1IDEzMS4xOSAxOC42MFExMzMuNjcgMjEuNzUgMTMzLjY3IDI4LjE3TDEyNC45MyAyOC4xN0wxMjQuOTMgMjUuMjJRMTI0LjkzIDI0LjM0IDEyNC40MyAyMy44NVExMjMuOTMgMjMuMzYgMTIzLjA3IDIzLjM2UTEyMi4wNSAyMy4zNiAxMjEuNTcgMjMuOTRRMTIxLjA5IDI0LjUxIDEyMS4wOSAyNS40MlExMjEuMDkgMjYuMzIgMTIxLjU4IDI3LjM3UTEyMi4wNyAyOC40MiAxMjMuNTEgMjkuNzlMMTI4LjQ3IDM0LjU1UTEyOS45NiAzNS45NiAxMzEuMjAgMzcuNTRRMTMyLjQ1IDM5LjExIDEzMy4yMCA0MS4yMFExMzMuOTYgNDMuMjkgMTMzLjk2IDQ2LjI5UTEzMy45NiA1Mi4zNCAxMzEuNzMgNTUuNzdRMTI5LjQ5IDU5LjIwIDEyMy45NSA1OS4yMFpNMTM1LjY0IDU4LjgxTDEzOS43OSAxNS44NEwxNTQuMzcgMTUuODRMMTU4LjQ1IDU4LjgxTDE1MC4zMiA1OC44MUwxNDkuNzEgNTEuODhMMTQ0LjUzIDUxLjg4TDE0My45OSA1OC44MUwxMzUuNjQgNTguODFNMTQ1LjE0IDQ1LjAyTDE0OS4wNSA0NS4wMkwxNDcuMTcgMjMuMTdMMTQ2Ljc4IDIzLjE3TDE0NS4xNCA0NS4wMlpNMTYxLjA4IDU4LjgxTDE2MS4wOCAxNS44NEwxNjkuNjggMTUuODRMMTY5LjY4IDUxLjQ5TDE3OC41MiA1MS40OUwxNzguNTIgNTguODFMMTYxLjA4IDU4LjgxWk0xODAuOTYgNTguODFMMTgwLjk2IDE1Ljg0TDE4OS41NSAxNS44NEwxODkuNTUgNTEuNDlMMTk4LjM5IDUxLjQ5TDE5OC4zOSA1OC44MUwxODAuOTYgNTguODFaTTIxMS4wOCA1OS4yMFEyMDUuOTMgNTkuMjAgMjAzLjIxIDU2LjA5UTIwMC40OSA1Mi45OCAyMDAuNDkgNDcuMDlMMjAwLjQ5IDI2LjY4UTIwMC40OSAyMS4xNyAyMDMuMTkgMTguMzFRMjA1Ljg4IDE1LjQ1IDIxMS4wOCAxNS40NVEyMTYuMjggMTUuNDUgMjE4Ljk4IDE4LjMxUTIyMS42OCAyMS4xNyAyMjEuNjggMjYuNjhMMjIxLjY4IDQ3LjA5UTIyMS42OCA1Mi45OCAyMTguOTYgNTYuMDlRMjE2LjI0IDU5LjIwIDIxMS4wOCA1OS4yME0yMTEuMTYgNTEuMjlRMjEzLjExIDUxLjI5IDIxMy4xMSA0Ny41MUwyMTMuMTEgMjYuNTRRMjEzLjExIDIzLjM2IDIxMS4yMSAyMy4zNlEyMDkuMDYgMjMuMzYgMjA5LjA2IDI2LjYxTDIwOS4wNiA0Ny41NlEyMDkuMDYgNDkuNTYgMjA5LjU1IDUwLjQzUTIxMC4wMyA1MS4yOSAyMTEuMTYgNTEuMjlaTTIyNS4xNSA1OC44MUwyMjUuMTUgMTUuODRMMjMzLjk4IDE1Ljg0TDIzNy45NCAzNi40M0wyMzcuOTQgMTUuODRMMjQ2LjI0IDE1Ljg0TDI0Ni4yNCA1OC44MUwyMzcuODQgNTguODFMMjMzLjU0IDM3LjMzTDIzMy41NCA1OC44MUwyMjUuMTUgNTguODFaIi8+PC9nPjwvZz48L3N2Zz4=");
     background-repeat:repeat;
     background-attachment: fixed;
@@ -18,160 +27,258 @@ body {
     background-position: top left;
     background-attachment: fixed;
     background-color: var(--msallon-background);
-    color: var(--msallon-text-color);
-    font-family: sans-serif;
-    font-size: 30px;
+    background-color: var(--bg-light);
+    color: var(--bg-dark);
+    padding: 2vw;
+    text-transform: uppercase;
 }
 
-p {
-    line-height: 1.2;
+/* Global Block Styling */
+.block {
+    border: var(--border-thick);
+    padding: 2rem;
+    background-color: var(--bg-light);
+    max-width: 100%;
+    overflow: auto;
+    position: relative;
+}
+.header-block {
+    padding-left: 270px;
+}
+.header-block * {
+    position: relative;
+    z-index: 10;
+}
+#msallon-header-pdp {
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: 
+        linear-gradient(to right, transparent, white),
+        image-set(
+            url("/assets/images/mael-300.webp") 1x,
+            url("/assets/images/mael-600.webp") 2x,
+            url("/assets/images/mael-900.webp") 3x
+        );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 285px;
+    z-index: 9 !important;
+}
+
+.skills-content {
+    text-transform: none;
+    line-height: 1.4;
+}
+
+/* Typography */
+h1 {
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -2px;
     margin-bottom: 1rem;
 }
 
-.container {
-    border: 15px solid black;
-    height: 60%;
-    padding: 10px;
-    position: relative;
-}
-.link {
-    text-decoration: none;
-    color: var(--msallon-text-color);
-    font-weight: 600;
-}
-.link:hover {
-    background-color: greenyellow;
-}
-
-#msallon-intro-container {
-    height: max-content;
-    min-height: 40vh;
-    width: 100%;
-}
-#msallon-intro-container h1 {
-    font-size: clamp(2rem, 15vw, 8em);
-    line-height: 1;
-    text-transform: uppercase;
-    font-weight: 900;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: var(--border-thick);
+    padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    width: 100%;
-    margin: 0;
+    gap: 5px;
 }
-#msallon-projects-container {
+h2 img {
+    height: 1em;
+}
+
+.subtitle-badge {
+    display: inline-block;
+    background-color: var(--bg-dark);
+    color: var(--accent-green);
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.bio {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    text-transform: none; /* Keep bio readable */
+    max-width: 800px;
+}
+
+#msallon-header-badges {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+}
+#msallon-header-badges img {
+    height: 32px;
+}
+
+/* Layout Grid */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+    margin-top: 2vw;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.exp-table {
     width: 100%;
-    height: 60%;
-    flex-wrap: wrap;
-    gap: 0;
-}
-#msallon-projects-container .container {
-    height: 100%;
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 500px;
-
-    display: flex;
-    flex-direction: column;
-
-    max-width: 100%;
+    border-collapse: collapse;
 }
 
-.msallon-label {
-    background-color: black;
-    font-weight: 600;
-    color: greenyellow;
-    text-transform: uppercase;
-}
-.msallon-project-dates {
-    color: grey;
-    font-style: italic;
-}
-#msallon-intro-buttons-container {
-    margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    position: relative;
-}
-.msallon-button {
+.exp-table th,
+.exp-table td {
     padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.exp-table tr:nth-child(even){
+    background-color: var(--msallon-pink);
+}
+
+.exp-logo {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+}
+
+.exp-inprogress {
+    background-color: var(--lighter-green) !important;
+}
+.hyperlink {
     text-decoration: none;
+    color: black;
     font-weight: 600;
-    transition: .1s;
-    text-transform: uppercase;
+}
+.hyperlink:hover {
+    background-color: var(--accent-green);
 }
 
-.msallon-secondary-button {
-    padding: 10px;
-    background-color: black;
-    color: greenyellow;
-    border: 5px solid greenyellow;
-}
-.msallon-secondary-button:hover {
-    outline: 5px solid greenyellow;
-}
-
-.msallon-primary-button {
-    padding: 10px;
-    background-color: greenyellow;
-    color: var(--msallon-text-color);
-    border: 5px solid black;
-}
-.msallon-primary-button:hover {
-    outline: 5px solid black;
+/* Highlight Bars & Buttons */
+.highlight-bar {
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+    padding: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-.msallon-send-button {
-    color: var(--msallon-text-color);
-    border-bottom: 10px solid var(--msallon-text-color);
-    /* position: absolute;
-    bottom: 30px; */
-    font-size: 3em;
-    /* left: 30px; */
-}
-.msallon-send-button::after {
-    content: "";
+.brutalist-button {
     display: block;
-    position: absolute;
-    height: 10px;
-    width: 50%;
-    background-color: greenyellow;
-    margin: 0;
-    transition: width .1s;
-}
-.msallon-send-button:hover::after {
     width: 100%;
+    background-color: var(--accent-green);
+    color: var(--bg-dark);
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: var(--border-thick);
+    margin-top: 1.5rem;
+    transition: background-color 0s, color 0s;
 }
 
-.msallon-projects-item h2 {
-    margin: 0;
-    font-size: clamp(2rem, 15vw, 4em);
-    line-height: 0.8;
-    font-weight: 900;
-    text-transform: uppercase;
+.brutalist-button:hover {
+    background-color: var(--bg-dark);
+    color: var(--accent-green);
 }
 
-@media (max-width: 1440px) {
-    body {
-        font-size: 24px;
+/* Brutalist Table for Skills */
+.brutalist-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: var(--border-thick);
+}
+
+.brutalist-table th, 
+.brutalist-table td {
+    border: var(--border-thick);
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.brutalist-table th {
+    background-color: var(--accent-green);
+    font-size: 1.2rem;
+}
+
+.status-ok {
+    background-color: var(--bg-dark);
+    color: var(--accent-green);
+}
+
+.status-pending {
+    background-color: #facc15;
+    color: var(--bg-dark);
+}
+
+/* Links Section */
+.links-block {
+    display: flex;
+    gap: 2vw;
+    padding: 10px;
+    border: none;
+}
+
+.link-item {
+    flex: 1;
+    border: var(--border-thick);
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--bg-dark);
+    font-size: 2rem;
+    font-weight: bold;
+    transition: all 0.1s;
+}
+
+.link-item:hover {
+    background-color: var(--accent-green);
+    box-shadow: 8px 8px 0px var(--bg-dark);
+    transform: translate(-4px, -4px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+    .exp-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .links-block {
+        flex-direction: column;
+        padding: 0;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .msallon-projects-item {
-        border-top: none;
+@media screen and (max-width:600px) {
+    .header-block {
+        padding: 370px 2rem 2rem;
     }
-    h1 {
-        line-height: 1; 
-    }
-    #msallon-projects-container {
-        height: max-content;
-    }
-
-    .msallon-send-button {
-        font-size: 1em;
+    #msallon-header-pdp {
+        background-image: 
+            linear-gradient(to bottom, transparent, white),
+            image-set(
+                url("/assets/images/mael-300.webp") 1x,
+                url("/assets/images/mael-600.webp") 2x,
+                url("/assets/images/mael-900.webp") 3x
+            );
+        width: 100%;
+        height: 50%;
     }
 }
