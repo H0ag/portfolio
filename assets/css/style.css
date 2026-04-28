@@ -12,6 +12,10 @@
     --msallon-pink: #f7eaea;
 }
 
+::selection {
+    background-color: var(--accent-green);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -43,7 +47,7 @@ body {
     position: relative;
 }
 .header-block {
-    padding-left: 270px;
+    padding-left: 300px;
 }
 .header-block * {
     position: relative;
